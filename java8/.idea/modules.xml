@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java8.iml" filepath="$PROJECT_DIR$/java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8-book/java8-book.iml" filepath="$PROJECT_DIR$/java8-book/java8-book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8-my/java8-my.iml" filepath="$PROJECT_DIR$/java8-my/java8-my.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8-share/java8-share.iml" filepath="$PROJECT_DIR$/java8-share/java8-share.iml" />
+    </modules>
+  </component>
+</project>
