@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -31,11 +34,12 @@ public class DemoForJava8 {
         for (String feature : features) {
             System.out.println(feature);
         }
+
         // Java 8之后：
         //List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
         features.forEach(n -> System.out.println(n));
 
-        // 使用Java 8的方法引用更方便，方法引用由::双冒号操作符标示，
+        // 使用Java 8的方法引用更names.forEach( (String name) -> { if(condition.test(name)) System.out.println(name + " ");}  );方便，方法引用由::双冒号操作符标示，
         // 看起来像C++的作用域解析运算符
         features.forEach(System.out::println);
 
@@ -117,6 +121,14 @@ public class DemoForJava8 {
         System.out.println("Lowest prime number in List : " + stats.getMin());
         System.out.println("Sum of all prime numbers : " + stats.getSum());
         System.out.println("Average of all prime numbers : " + stats.getAverage());
+
+        //
+        System.out.println("-------------by:cuimiao------------------------------");
+        BiConsumer biConsumer = (str1,str2) -> {System.out.print(str1);System.out.print(str2);};
+        biConsumer.accept("hello,","world");
+        //BiFunction biFunction = (str1,str2) -> {System.out.print(str1);System.out.print(str2);return };
+        Function<Integer,Integer> function = (num) -> (num*3);
+        System.out.println(function.apply(5));
     }
 
     /**
@@ -125,10 +137,11 @@ public class DemoForJava8 {
      * @param condition 筛选条件的Lambda表达式.
      */
     public static void filter(List<String> names, Predicate<String> condition) {
-        for(String name: names)  {
+        /*for(String name: names)  {
             if(condition.test(name)) {
                 System.out.println(name + " ");
             }
-        }
+        }*/
+        names.forEach( (String name) -> { if(condition.test(name)) System.out.println(name + " ");} );
     }
 }
